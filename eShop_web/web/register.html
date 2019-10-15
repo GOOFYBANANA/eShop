@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>eShop Register</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="js/jquery-3.4.1.js"></script>
+    <style>
+        .container {
+            margin-top: 180px;
+        }
+
+        .form-box {
+            margin-top: 30px;
+        }
+        #suggest {
+            color: red;
+        }
+        .sure-null {
+            color: rgb(187, 66, 36);
+            height: 34px;
+            line-height: 34px;
+        }
+        .col-md-2 {
+            padding-left: 0px;
+        }
+    </style>
+    <script>
+        $(
+            function () {
+                $("#suggest").hide();
+                $(".sure-null").hide();
+                //输入值是否为空
+                $("input").on("blur",function () {
+                    if ($(this).val() == ""){
+                        $(this).parent().addClass("has-error");
+                        $(this).parent().next().children().show();
+                    }else {
+                        $(this).parent().removeClass("has-error")
+                        $(this).parent().addClass("has-success");
+                        $(this).parent().next().children().hide();
+                    }
+                })
+                // 两次密码输入是否匹配
+                $("#register-form").submit(
+                    function () {
+                        if ($("#upassword").val() == $("#surepassword").val()){
+                            return true;
+                        }else {
+                            $("#suggest").show();
+                            return false;
+                        }
+                    }
+                );
+            }
+        )
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4">
+                <h1>eShop Register</h1>
+            </div>
+        </div>
+        <div class="row form-box">
+            <form action="/Register" method="POST" role="form" class="form-horizontal" id="register-form">
+                <div class="form-group row">
+                    <label class="col-md-3 control-label">email</label>
+                    <div class="col-md-5">
+                        <input type="email" id="uemail" name="uemail" class="form-control" placeholder="邮箱" />
+                    </div>
+                    <div class="col-md-2">
+                        <span class="glyphicon glyphicon-remove sure-null">邮箱不能为空</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 control-label">用户名</label>
+                    <div class="col-md-5">
+                        <input type="text" id="uname" name="uname"  placeholder="用户名" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <span class="glyphicon glyphicon-remove sure-null">用户名不能为空</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 control-label">密码</label>
+                    <div class="col-md-5">
+                        <input type="password" name="upassword"  id="upassword" class="form-control" placeholder="密码" />
+                    </div>
+                    <div class="col-md-2">
+                        <span class="glyphicon glyphicon-remove sure-null">密码不能为空</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-md-3 control-label">确认密码</label>
+                    <div class="col-md-5">
+                        <input type="password" name="surepassword" id="surepassword" class="form-control" placeholder="确认密码" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-md-3 control-label">性别</label>
+                    <div class="col-sm-2">
+                        男&nbsp;&nbsp;<input type="radio" name="usex"  value="男" checked/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        女&nbsp;&nbsp;<input type="radio" name="usex"  value="女"/>
+                    </div>
+                </div>
+                <div class="form-group row"  id="suggest">
+                    <label  class="col-md-3 control-label"></label>
+                    <div class="col-md-5">
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                       <span>两次密码输入不匹配！请重新输入！</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                        <div class="col-md-3"></div>
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-primary">注册</button>
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
