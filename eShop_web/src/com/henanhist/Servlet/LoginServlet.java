@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = req.getSession();
         String login_state = service.login(ID, PASSWORD);
         try {
-            if (!login_state.equals("1")){
+            if (!login_state.equals("1") && session.getAttribute("checkword").equals(checkword)){
                 session.setAttribute("loginState","0");
                 session.setAttribute("userName", login_state);
                 resp.sendRedirect(this.getServletContext().getContextPath()+"/index.html");
