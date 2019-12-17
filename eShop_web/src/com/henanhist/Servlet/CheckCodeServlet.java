@@ -26,6 +26,7 @@ public class CheckCodeServlet extends HttpServlet {
 
     }
     private BufferedImage getImage(HttpSession session){
+        int j = 1;
         int width = 70;
         int height = 30;
         StringBuffer check = new StringBuffer();
@@ -49,7 +50,14 @@ public class CheckCodeServlet extends HttpServlet {
             g.drawString(s, i*15+6, 24);
             check.append(s);
         }
-        session.setAttribute("checkword", check);
+        String s = null;
+        if (check.length() == 4){
+            s = check.toString();
+            session.setAttribute("checkword", s);
+        }else {
+            s = check.substring(4*j, check.length());
+            session.setAttribute("checkword", s);
+        }
         g.dispose();
         return img;
     }

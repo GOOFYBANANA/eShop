@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 35260
+  Date: 2019/12/16
+  Time: 14:58
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +22,30 @@
         .col-md-1, .col-md-2 {
             text-align: center;
         }
+        .cart-title {
+            padding-top: 15px;
+            padding-bottom: 5px;
+            font-size: 16px;
+            font-weight: 800;
+        }
+        .product-list {
+            padding-top: 15px;
+        }
+        .allprice-f {
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .allprice {
+            
+            color: rgb(228, 128, 62);
+        }
     </style>
     <script>
         $(
             function () {
                 $('.removeP').on("click",function () {
-                    $(this).parent().parent().hide();
+                    $(this).parent().parent().parent().parent().hide();
                 });
             }
         )
@@ -38,10 +64,10 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-left" id="mytab">
-                            <li class="active"><a href="#">电子数码</a></li>
-                            <li><a href="#">男士专区</a></li>
-                            <li><a href="#">女士专区</a></li>
-                            <li><a href="#">儿童专区</a></li>
+                            <li><a href="#">手机/配件</a></li>
+                            <li><a href="#">游戏设备</a></li>
+                            <li><a href="#">电脑主机</a></li>
+                            <li><a href="#">相机摄像</a></li>
                             <li>
                                 <form action="#" method="post" class="navbar-form" id="search-box">
                                     <div class="form-group">
@@ -59,7 +85,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="cart.html" id="shopkets">
-                                    <span class="glyphicon glyphicon-piggy-bank">购物车</span>
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> &nbsp;购物车
                                 </a>
                             </li>
                             <li class="dropdown login-btn" id="mis-login">
@@ -69,11 +95,22 @@
                                     <span class="login-state">未登录</span>
                                     <span class="glyphicon glyphicon-menu-down"></span>
                                 </a>
-                                <ul class="dropdown-menu" role="menu">
+                                <!-- <ul class="dropdown-menu" role="menu">
                                     <li><a href="login.html">登陆</a></li>
                                     <li><a href="register.html">注册</a></li>
-                                </ul>
+                                </ul> -->
                             </li>
+                            <div class="account-toggle">
+                                <span class="glyphicon glyphicon-triangle-top top-arrow"></span>
+                                <div class="text-box">
+                                    登录使用更多功能
+                                </div>
+                                <div class="bottom-box">
+                                    <div class="account-choose">
+                                        <a href="login.html" target="_blank">登陆/注册</a>
+                                    </div>
+                                </div>
+                            </div>
                             <li class="dropdown login-btn login-li" id="loginState">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" id="user-spans">
                                     <span class="glyphicon glyphicon-user"></span>
@@ -93,64 +130,94 @@
             </nav>
         </div>
         <!-- 购物车商品 -->
-        <div class="row">
+        <div class="row cart-title">
             <div class="col-md-1">
                 <input type="checkbox">全选
             </div>
             <div class="col-md-6">
-                商品信息
+                &nbsp;&nbsp;&nbsp;&nbsp;商品信息
             </div>
             <div class="col-md-1">
-                <span>109</span>
+                <span>商品单价</span>
             </div>
             <div class="col-md-1">
-                <span>2</span>
+                <span>数量</span>
             </div>
             <div class="col-md-1">
-                <span>218</span>
+                <span>总价</span>
             </div>
             <div class="col-md-2">
-                <a href="#" class="removeP">删除</a>
+               
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-1">
-                <input type="checkbox">
+        <!-- 购物车列表 -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row product-list">
+                    <div class="col-md-1">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-md-6">
+                        <span>
+                            <i>
+                                不知名的商品
+                            </i>
+                        </span>
+                    </div>
+                    <div class="col-md-1">
+                        <span>10</span>
+                    </div>
+                    <div class="col-md-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-md-1">
+                        <span>&nbsp;&nbsp;&nbsp;10</span>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="removeP">删除</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                商品信息
+        </nav>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row product-list">
+                    <div class="col-md-1">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col-md-6">
+                        <span>
+                            <i>
+                                不知名的商品
+                            </i>
+                        </span>
+                    </div>
+                    <div class="col-md-1">
+                        <span>10</span>
+                    </div>
+                    <div class="col-md-1">
+                        <span>1</span>
+                    </div>
+                    <div class="col-md-1">
+                        <span>&nbsp;&nbsp;&nbsp;10</span>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="removeP">删除</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-1">
-                <span>10</span>
+        </nav>
+
+        <!-- 结算按钮 -->
+        <div class="row product-list">
+            <div class="col-md-7">
             </div>
-            <div class="col-md-1">
-                <span>1</span>
+            <div class="col-md-2"><span class="allprice-f">总金额：</span><span class="allprice">1111</span>
+                <span class="allprice-f">元</span>
             </div>
-            <div class="col-md-1">
-                <span>10</span>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="removeP">删除</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-1">
-                <input type="checkbox">
-            </div>
-            <div class="col-md-6">
-                商品信息
-            </div>
-            <div class="col-md-1">
-                <span>1019</span>
-            </div>
-            <div class="col-md-1">
-                <span>1</span>
-            </div>
-            <div class="col-md-1">
-                <span>1019</span>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="removeP">删除</a>
+            <div class="col-md-3">
+                <a href="#" class="btn btn-primary active" role="button">确认付款</a>
             </div>
         </div>
     </div>
