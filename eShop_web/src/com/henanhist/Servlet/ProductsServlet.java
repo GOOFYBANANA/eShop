@@ -23,6 +23,6 @@ public class ProductsServlet extends HttpServlet {
         EshopService service = new EshopService();
         productList = service.findAllproducts();
         req.setAttribute("productList",productList);
-        req.getRequestDispatcher("jsp地址").forward(req,resp);
+        req.getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }

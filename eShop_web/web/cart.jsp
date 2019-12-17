@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.henanhist.domain.Product" %>
+<%@ page import="java.util.Iterator" %><%--
   Created by IntelliJ IDEA.
   User: 35260
   Date: 2019/12/16
@@ -59,7 +61,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <div class="navbar-brand">
-                            <a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+                            <a href="index.jsp"><span class="glyphicon glyphicon-home"></span></a>
                         </div>
                     </div>
                     <div class="collapse navbar-collapse">
@@ -151,35 +153,40 @@
             </div>
         </div>
         <!-- 购物车列表 -->
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="row product-list">
-                    <div class="col-md-1">
-                        <input type="checkbox">
-                    </div>
-                    <div class="col-md-6">
-                        <span>
-                            <i>
-                                不知名的商品
-                            </i>
-                        </span>
-                    </div>
-                    <div class="col-md-1">
-                        <span>10</span>
-                    </div>
-                    <div class="col-md-1">
-                        <span>1</span>
-                    </div>
-                    <div class="col-md-1">
-                        <span>&nbsp;&nbsp;&nbsp;10</span>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="#" class="removeP">删除</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <%
+//            List<Product> list = (List<Product>) request.getAttribute("");
+//            for (int i = 0; i<list.size();i++){
+//            }
+            out.write(" <nav class=\"navbar navbar-default\">\n" +
+                    "            <div class=\"container-fluid\">\n" +
+                    "                <div class=\"row product-list\">\n" +
+                    "                    <div class=\"col-md-1\">\n" +
+                    "                        <input type=\"checkbox\">\n" +
+                    "                    </div>\n" +
+                    "                    <div class=\"col-md-6\">\n" +
+                    "                        <span>\n" +
+                    "                            <i>\n" +
+                    "                                不知名的商品\n" +
+                    "                            </i>\n" +
+                    "                        </span>\n" +
+                    "                    </div>\n" +
+                    "                    <div class=\"col-md-1\">\n" +
+                    "                        <span>10</span>\n" +
+                    "                    </div>\n" +
+                    "                    <div class=\"col-md-1\">\n" +
+                    "                        <span>1</span>\n" +
+                    "                    </div>\n" +
+                    "                    <div class=\"col-md-1\">\n" +
+                    "                        <span>&nbsp;&nbsp;&nbsp;10</span>\n" +
+                    "                    </div>\n" +
+                    "                    <div class=\"col-md-2\">\n" +
+                    "                        <a href=\"#\" class=\"removeP\">删除</a>\n" +
+                    "                    </div>\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "        </nav>");
 
+        %>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="row product-list">

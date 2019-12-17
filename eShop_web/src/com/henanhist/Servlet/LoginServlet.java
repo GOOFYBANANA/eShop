@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
             if (!login_state.equals("1") && session.getAttribute("checkword").equals(checkword)){
                 session.setAttribute("loginState","0");
                 session.setAttribute("userName", login_state);
-                resp.sendRedirect(this.getServletContext().getContextPath()+"/index.html");
+                resp.sendRedirect(this.getServletContext().getContextPath()+"/index.jsp");
             }else {
                 session.setAttribute("loginState", "1");
                 resp.sendRedirect(this.getServletContext().getContextPath()+"/login.html");

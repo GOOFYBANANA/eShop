@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
                 <div class="container-fluid">
                 <div class="navbar-header">
                     <div class="navbar-brand">
-                        <a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+                        <a href="index.jsp"><span class="glyphicon glyphicon-home"></span></a>
                     </div>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -117,7 +118,9 @@
                     <div class="item active">
                         <img src="image/1.png" alt="...">
                         <div class="carousel-caption">
-                            绿色
+                            <%
+                                out.write("12345");
+                            %>
                         </div>
                     </div>
                     <div class="item">
