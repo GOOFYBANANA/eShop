@@ -15,6 +15,7 @@ public class EshopService {
         return dao.register(user);
     }
     public List findAllproducts(){
-        return null;
+        EshopDao dao = new EshopDao();
+        return dao.findAllproducts();
     }
 }

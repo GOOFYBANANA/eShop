@@ -1,10 +1,12 @@
 package com.henanhist.dao;
 
+import com.henanhist.domain.Product;
 import com.henanhist.domain.User;
 import com.henanhist.utils.DBCPUtils;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -38,6 +40,13 @@ public class EshopDao {
         return state;
     }
     public List findAllproducts(){
-        return null;
+        String sql = "select * from product";
+        List<Product> productList = null;
+        try {
+            productList = runner.query(sql, new BeanListHandler<Product>(Product.class));
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return productList;
     }
 }

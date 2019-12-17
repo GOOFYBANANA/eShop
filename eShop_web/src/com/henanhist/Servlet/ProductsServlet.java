@@ -19,9 +19,10 @@ public class ProductsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Product> products = null;
+        List<Product> productList = null;
         EshopService service = new EshopService();
-        products = service.findAllproducts();
-        super.doPost(req, resp);
+        productList = service.findAllproducts();
+        req.setAttribute("productList",productList);
+        req.getRequestDispatcher("jsp地址").forward(req,resp);
     }
 }
