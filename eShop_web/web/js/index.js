@@ -40,7 +40,7 @@ window.onload = function(){
     //图片鼠标经过效果
     $(".col-md-4 img").mouseover(
         function () {
-            $(this).next().fadeIn();
+            $(this).next().fadeIn(1800);
         }
     );
     $(".col-md-4 img").mouseout(
