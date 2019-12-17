@@ -47,4 +47,13 @@
         <servlet-name>Products</servlet-name>
         <url-pattern>/product</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddCart</servlet-name>
+        <servlet-class>com.henanhist.Servlet.AddCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCart</servlet-name>
+        <url-pattern>/addcart</url-pattern>
+    </servlet-mapping>
 </web-app>

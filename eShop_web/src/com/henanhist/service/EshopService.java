@@ -1,7 +1,10 @@
 package com.henanhist.service;
 
 import com.henanhist.dao.EshopDao;
+import com.henanhist.domain.Product;
 import com.henanhist.domain.User;
+
+import java.util.List;
 
 public class EshopService {
     static EshopDao dao = new EshopDao();
@@ -10,5 +13,8 @@ public class EshopService {
     }
     public int register(User user) {
         return dao.register(user);
+    }
+    public List findAllproducts(){
+        return null;
     }
 }

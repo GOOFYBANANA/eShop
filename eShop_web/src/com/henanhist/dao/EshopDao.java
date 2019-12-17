@@ -7,6 +7,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class EshopDao {
@@ -35,5 +36,8 @@ public class EshopDao {
             e.printStackTrace();
         }
         return state;
+    }
+    public List findAllproducts(){
+        return null;
     }
 }
